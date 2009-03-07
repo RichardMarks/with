@@ -1,0 +1,80 @@
+
+################################################################################
+# stdlib.wth
+# WITH Standard Library
+# Developed by Richard Marks <ccpsceo@gmail.com>
+# (C) Copyright 2009, CCPS Solutions
+# http://www.ccpssolutions.com
+################################################################################
+
+%START TARGET
+%ID std
+%ACTIONS print scan read write readline newline stoi stor rtos itos rnd
+	%START ACTION
+		%ID print
+		%SOURCE std-print.cpp
+		%PARAMS STRING VARARG
+	%END ACTION
+	
+	%START ACTION
+		%ID scan
+		%SOURCE std-scan.cpp
+		%PARAMS STRING VARARG
+	%END ACTION
+	
+	%START ACTION
+		%ID read
+		%SOURCE std-read.cpp
+		%PARAMS STRING_REFERENCE
+	%END ACTION
+	
+	%START ACTION
+		%ID write
+		%SOURCE std-write.cpp
+		%PARAMS STRING
+	%END ACTION
+	
+	%START ACTION
+		%ID readline
+		%SOURCE std-readline.cpp
+		%PARAMS STRING_REFERENCE
+	%END ACTION
+	
+	%START ACTION
+		%ID newline
+		%SOURCE std-newline.cpp
+		%PARAMS NONE
+	%END ACTION
+	
+	%START ACTION
+		%ID stoi
+		%SOURCE std-stoi.cpp
+		%PARAMS STRING INTEGER_REFERENCE
+	%END ACTION
+	
+	%START ACTION
+		%ID stor
+		%SOURCE std-stor.cpp
+		%PARAMS STRING REAL_REFERENCE
+	%END ACTION
+	
+	%START ACTION
+		%ID rtos
+		%SOURCE std-rtos.cpp
+		%PARAMS REAL STRING_REFERENCE
+	%END ACTION
+	
+	%START ACTION
+		%ID itos
+		%SOURCE std-itos.cpp
+		%PARAMS INTEGER STRING_REFERENCE
+	%END ACTION
+	
+	%START ACTION
+		%ID rnd
+		%SOURCE std-rnd.cpp
+		%PARAMS INTEGER INTEGER INTEGER_REFERENCE
+	%END ACTION
+	
+%END TARGET
+

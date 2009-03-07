@@ -1,0 +1,40 @@
+################################################################################
+# hello.wth
+# A simple Hello-World program in the WITH programming language
+# Designed by Richard Marks <ccpsceo@gmail.com>
+# (C) Copyright 2009, CCPS Solutions
+# http://www.ccpssolutions.com
+################################################################################
+
+# include the code in stdlib.wth into this file so that we can access 
+# the Standard Library TARGETs and ACTIONs.
+# we give the namespace an alias of io to make usage easier.
+%USE stdlib AS io;
+
+# include the code in system.wth into this file so that we can access 
+# the System Library TARGETs and ACTIONs.
+%USE system as sys;
+
+%use ../mylib/gamecode;
+
+# declare a few new variables
+$name;
+
+# ask the user for their name
+with io do write "What is your name?";
+
+# get the user's name and store it into the $name variable
+with io do readline @$name;
+
+# write the greeting string on the screen
+with io do print "Hello, %s!\n" $name;
+with io do print "%s HP: %d MP: %d\n" $name $hp $mp;
+
+with game do set camera 40 50 500.0f -4.0f;
+
+# wait five seconds and end the program
+with sys do wait 5000;
+with sys do exit 0;
+
+
+
